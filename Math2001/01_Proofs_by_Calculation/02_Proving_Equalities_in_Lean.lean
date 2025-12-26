@@ -43,9 +43,9 @@ example {a b m n : ℤ} (h1 : a * m + b * n = 1) (h2 : b ^ 2 = 2 * a ^ 2) :
 example {a b c d e f : ℤ} (h1 : a * d = b * c) (h2 : c * f = d * e) :
     d * (a * f - b * e) = 0 :=
   calc
-    (d * (a * f - b * e))
-      = (a * d) * f - d * (b * e) by ring
-      = (b * c) * f - d * (b * e) by rw [h1]
-      = b * (c*f)-b*(d*e) by ring
-      = b * (d * e) - b * (d * e) by rw [h2]
-      = 0 by ring
+    d * (a * f - b * e)
+    _ = (a * d) * f - d * (b * e) := by ring
+    _ = (b * c) * f - d * (b * e) := by rw [h1]
+    _ = b * (c*f)-b*(d*e) := by ring
+    _ = b * (d * e) - b * (d * e) := by rw [h2]
+    _ = 0 := by ring
